@@ -5,6 +5,7 @@ import { Inter as FontSans } from 'next/font/google'
 import { ReactNode } from 'react'
 
 import { SonnerProvider, Toaster, TooltipProvider } from '@/components/ui'
+import { ReactQueryProvider } from '@/contexts/react-query/ReactQueryProvider'
 import { cn } from '@/lib/utils'
 
 const fontSans = FontSans({
@@ -13,8 +14,8 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: 'Reaction Time',
-  description: 'Tienda de productos acuáticos'
+  title: 'SART (Sistema Automatizado de Revisiones Técnicas)',
+  description: 'Sistema Automatizado de Revisiones Técnicas'
 }
 
 export default function RootLayout({
@@ -33,7 +34,9 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <TooltipProvider>{children}</TooltipProvider>
+        <TooltipProvider>
+          <ReactQueryProvider>{children}</ReactQueryProvider>
+        </TooltipProvider>
         <SonnerProvider />
         <Toaster />
       </body>
