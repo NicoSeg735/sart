@@ -1,0 +1,24 @@
+{
+  "recommendations": [
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "streetsidesoftware.code-spell-checker",
+    "wallabyjs.console-ninja",
+    "vivaxy.vscode-conventional-commits",
+    "usernamehw.errorlens",
+    "dsznajder.es7-react-js-snippets",
+    "dbaeumer.vscode-eslint",
+    "ecmel.vscode-html-css",
+    "pulkitgangwar.nextjs-snippets",
+    "csstools.postcss",
+    "mrmlnc.vscode-postcss-sorting",
+    "burkeholland.simple-react-snippets",
+    "streetsidesoftware.code-spell-checker-spanish",
+    "bradlc.vscode-tailwindcss",
+    "meganrogge.template-string-converter",
+    "wayou.vscode-todo-highlight",
+    "gruntfuggly.todo-tree",
+    "britesnow.vscode-toggle-quotes",
+    "deinsoftware.arrow-function-snippets"
+  ]
+}
