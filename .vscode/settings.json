@@ -1,0 +1,10 @@
+{
+  "cSpell.words": ["ecma", "sart"],
+  "editor.formatOnSave": true,
+  "prettier.endOfLine": "lf",
+  "files.eol": "\n",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.tabSize": 2
+}
