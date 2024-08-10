@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import { ReactNode } from 'react'
 
+import Footer from '@/components/layout/Footer'
+import Header from '@/components/layout/Header'
 import { SonnerProvider, Toaster, TooltipProvider } from '@/components/ui'
 import { ReactQueryProvider } from '@/contexts/react-query/ReactQueryProvider'
 import { cn } from '@/lib/utils'
@@ -35,7 +37,11 @@ export default function RootLayout({
         )}
       >
         <TooltipProvider>
-          <ReactQueryProvider>{children}</ReactQueryProvider>
+          <ReactQueryProvider>
+            <Header />
+            {children}
+            <Footer />
+          </ReactQueryProvider>
         </TooltipProvider>
         <SonnerProvider />
         <Toaster />

@@ -1,11 +1,13 @@
 import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
-import * as React from 'react'
+import { ButtonHTMLAttributes, forwardRef, ReactNode } from 'react'
 
 import { cn } from '@/lib/utils'
 
+import { Spinner } from './spinner'
+
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex w-full items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
@@ -34,20 +36,47 @@ const buttonVariants = cva(
 )
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
+  icon?: ReactNode
+  loading?: boolean
+  fullWidth?: boolean
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      className,
+      variant,
+      size,
+      icon,
+      children,
+      loading = false,
+      asChild = false,
+      fullWidth = false,
+      ...props
+    },
+    ref
+  ) => {
     const Comp = asChild ? Slot : 'button'
     return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
+      <div className={`relative${fullWidth ? 'w-full' : ''}`}>
+        {icon && (
+          <div className="absolute inset-y-0 left-3 top-[55%] -translate-y-[55%] transform">
+            {icon}
+          </div>
+        )}
+        <Comp
+          className={cn(buttonVariants({ variant, size, className }))}
+          disabled={loading}
+          ref={ref}
+          {...props}
+        >
+          {loading && <Spinner className="mr-2" />}
+          {children}
+        </Comp>
+      </div>
     )
   }
 )
