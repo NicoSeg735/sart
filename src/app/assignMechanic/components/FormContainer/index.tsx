@@ -43,7 +43,7 @@ export default function FormContainer() {
     }
   })
 
-  const { reset } = form
+  const { reset, formState } = form
 
   async function onSubmit(values: z.infer<typeof assignMechanicToAppointment>) {
     console.log(values)
@@ -57,7 +57,7 @@ export default function FormContainer() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col gap-4"
+        className="flex flex-grow flex-col gap-4"
       >
         <FormField
           control={form.control}
@@ -115,16 +115,21 @@ export default function FormContainer() {
             </FormItem>
           )}
         />
-        <div className="my-4 flex flex-col gap-4 sm:flex-row sm:justify-end">
+        <div className="mt-4 flex flex-grow flex-col items-stretch justify-end gap-4 sm:flex-row sm:items-end">
           <Button
-            disabled={loading}
+            disabled={loading || !formState.isDirty}
             variant={'secondary'}
+            className={`${!formState.isDirty ? 'disabled:opacity-0' : 'opacity-100'} transition-opacity duration-200`}
             type="button"
             onClick={() => reset()}
           >
             Deshacer
           </Button>
-          <Button disabled={loading} loading={loading} type="submit">
+          <Button
+            disabled={loading || !formState.isDirty}
+            loading={loading}
+            type="submit"
+          >
             Guardar
           </Button>
         </div>

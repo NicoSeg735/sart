@@ -1,4 +1,5 @@
 import '@/app/globals.css'
+import 'reflect-metadata'
 
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'

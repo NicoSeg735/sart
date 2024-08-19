@@ -1,24 +1,33 @@
 import { type NextRequest, NextResponse } from 'next/server'
 
-import prisma from '@/lib/prisma'
+import { UserService } from '@/services/user'
 
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams
+  const userService = new UserService()
+
   const id = searchParams.get('id')
 
   if (!id) {
-    return NextResponse.error()
+    return NextResponse.json({ error: 'ID is required' }, { status: 400 })
   }
 
-  const userData = await prisma.user.findUnique({
-    where: {
-      id
+  try {
+    const user = await userService.getUser(parseInt(id))
+    if (!user) {
+      return NextResponse.json({ error: 'User not found' }, { status: 404 })
     }
-  })
-
-  if (!userData) {
-    return NextResponse.error()
+    return NextResponse.json({ ...user })
+  } catch (error) {
+    console.error('Error fetching user:', error)
+    return NextResponse.json({ error: 'Invalid ID' }, { status: 400 })
   }
+}
 
-  return NextResponse.json({ ...userData })
+export async function POST(req: NextRequest) {
+  const { email, name } = await req.json()
+  const userService = new UserService()
+  const newUser = await userService.createUser({ email, name })
+
+  return NextResponse.json(newUser)
 }

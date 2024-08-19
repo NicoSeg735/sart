@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 
-import { getUser } from '@/services/user'
+import { UserService } from '@/services/user'
 
 export default async function ProfilePage({
   params
@@ -8,7 +8,11 @@ export default async function ProfilePage({
   params: { id: string }
 }) {
   const { id } = params
-  const { data } = await getUser(id)
+  if (!id || isNaN(parseInt(id))) {
+    return notFound()
+  }
+  const userService = new UserService()
+  const data = await userService.getUser(Number(id))
 
   return (
     <article>

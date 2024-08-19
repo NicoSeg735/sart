@@ -1,5 +1,6 @@
 {
   "name": "sart",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,12 +8,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "studio": "pnpx prisma studio",
-    "migrate": "pnpx prisma db push"
+    "migrate": "node --no-warnings --loader ts-node/esm src/lib/typeorm/migrate.ts",
+    "migration:up": "pnpx typeorm-ts-node-esm migration:run -d src/app/lib/typeorm/data-source.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
-    "@prisma/client": "5.18.0",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.0",
@@ -30,10 +30,12 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.52.2",
+    "reflect-metadata": "^0.2.2",
     "sonner": "^1.5.0",
     "sqlite3": "^5.1.7",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
+    "typeorm": "^0.3.20",
     "zod": "^3.23.8"
   },
   "devDependencies": {
@@ -52,8 +54,9 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "postcss": "^8",
     "prettier-plugin-tailwindcss": "^0.6.6",
-    "prisma": "^5.18.0",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5"
   },
   "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903"
