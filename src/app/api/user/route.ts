@@ -4,8 +4,6 @@ import { UserService } from '@/services/user'
 
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams
-  const userService = new UserService()
-
   const id = searchParams.get('id')
 
   if (!id) {
@@ -13,6 +11,7 @@ export async function GET(req: NextRequest) {
   }
 
   try {
+    const userService = new UserService()
     const user = await userService.getUser(parseInt(id))
     if (!user) {
       return NextResponse.json({ error: 'User not found' }, { status: 404 })
