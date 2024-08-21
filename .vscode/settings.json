@@ -3,9 +3,9 @@
     "clsx",
     "ecma",
     "pnpx",
+    "postgres",
     "sart",
     "sonner",
-    "sqlite",
     "tanstack",
     "typeorm"
   ],

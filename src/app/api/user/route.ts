@@ -25,9 +25,9 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  const { email, name } = await req.json()
+  const { email, password } = await req.json()
   const userService = new UserService()
-  const newUser = await userService.createUser({ email, name })
+  const newUser = await userService.createUser({ email, password })
 
   return NextResponse.json(newUser)
 }

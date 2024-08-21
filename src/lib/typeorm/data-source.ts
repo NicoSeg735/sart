@@ -2,15 +2,35 @@ import 'reflect-metadata'
 
 import { DataSource } from 'typeorm'
 
-import { User } from './entities'
-import { Initial1724103161428 } from './migrations/1724103161428-initial'
+import {
+  Appointment,
+  Client,
+  Employee,
+  Mechanic,
+  TechnicalDirector,
+  User,
+  Vehicle
+} from './entities'
 
 export const AppDataSource = new DataSource({
-  type: 'sqlite',
-  database: './data/db.sqlite',
-  synchronize: process.env.NODE_ENV === 'development',
-  logging: false,
-  entities: [User],
-  migrations: [Initial1724103161428],
-  subscribers: []
+  type: 'postgres',
+  url: process.env.DATABASE_URL,
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 5432,
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  synchronize: true,
+  logging: true,
+  entities: [
+    User,
+    Mechanic,
+    Appointment,
+    Employee,
+    Client,
+    Vehicle,
+    TechnicalDirector
+  ],
+  subscribers: [],
+  migrations: []
 })

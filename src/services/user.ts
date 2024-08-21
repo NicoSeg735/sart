@@ -3,6 +3,8 @@ import { Repository } from 'typeorm'
 import { initializeDatabase } from '@/lib/typeorm'
 import { User } from '@/lib/typeorm/entities/User'
 
+type NewUser = Omit<User, 'id'>
+
 export class UserService {
   private userRepository: Repository<User>
   private initialized: Promise<void>
@@ -16,15 +18,15 @@ export class UserService {
     this.userRepository = dataSource.getRepository(User)
   }
 
-  async createUser(userData: Partial<User>): Promise<User> {
+  public async createUser(userData: NewUser): Promise<User> {
     try {
       if (!userData.email) {
         throw new Error('Missing required fields')
       }
       await this.initialized
       const newUser = new User()
-      newUser.name = userData.name
       newUser.email = userData.email
+      newUser.password = userData.password
 
       return await this.userRepository.save(newUser)
     } catch (error) {
@@ -33,7 +35,7 @@ export class UserService {
     }
   }
 
-  async updateUser(id: number, userData: Partial<User>): Promise<User> {
+  public async updateUser(id: number, userData: Partial<User>): Promise<User> {
     try {
       let user = await this.userRepository.findOneBy({
         id
@@ -50,7 +52,7 @@ export class UserService {
     }
   }
 
-  async getUser(id: number): Promise<User | null> {
+  public async getUser(id: number): Promise<User | null> {
     await this.initialized
     try {
       const user = await this.userRepository.findOneBy({
