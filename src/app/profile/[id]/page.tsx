@@ -14,11 +14,22 @@ export default async function ProfilePage({
   const userService = new UserService()
   const data = await userService.getUser(Number(id))
 
+  if (!data) {
+    return notFound()
+  }
+
   return (
-    <article>
-      <h1>Profile</h1>
-      <p>Profile page</p>
-      {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : notFound()}
+    <article className="flex flex-grow flex-col p-8">
+      <h1 className="text-xl font-bold">Perfil</h1>
+      <h2 className="text-lg font-semibold">Datos del usuario</h2>
+      <div className="mt-4 flex flex-col gap-1">
+        <p>
+          <span className="font-semibold">ID:</span> {data.id}
+        </p>
+        <p>
+          <span className="font-semibold">Email:</span> {data.email}
+        </p>
+      </div>
     </article>
   )
 }
