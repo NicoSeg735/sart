@@ -6,8 +6,7 @@
     "postgres",
     "sart",
     "sonner",
-    "tanstack",
-    "typeorm"
+    "tanstack"
   ],
   "editor.formatOnSave": true,
   "prettier.endOfLine": "lf",

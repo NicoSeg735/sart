@@ -7,9 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "migrate": "node --no-warnings --loader ts-node/esm src/lib/typeorm/migrate.ts",
-    "migration:up": "pnpx typeorm-ts-node-esm migration:run -d src/app/lib/typeorm/data-source.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -21,7 +19,6 @@
     "@tailwindcss/typography": "^0.5.14",
     "@tanstack/react-query": "^5.51.23",
     "@tanstack/react-query-devtools": "^5.51.23",
-    "axios": "^1.7.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.427.0",
@@ -35,7 +32,6 @@
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
-    "typeorm": "^0.3.20",
     "zod": "^3.23.8"
   },
   "devDependencies": {

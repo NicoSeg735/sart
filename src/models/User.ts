@@ -1,24 +1,24 @@
 export type IUser = {
   id: number
-  name: string
+  password: string
   email: string
 }
 
 export class User {
-  public id: number
-  public name: string
-  public email: string
+  private id: number
+  private password: string
+  private email: string
 
-  constructor(id: number, name: string, email: string) {
+  constructor(id: number, password: string, email: string) {
     this.id = id
-    this.name = name
+    this.password = password
     this.email = email
   }
 
-  getUser(): IUser {
+  getData(): IUser {
     return {
       id: this.id,
-      name: this.name,
+      password: this.password,
       email: this.email
     }
   }
