@@ -14,9 +14,7 @@ export default async function ProfilePage({
     return notFound()
   }
 
-  const { data: userInstance, error } = await userService.getUserById(
-    Number(id)
-  )
+  const { data: userInstance, error } = await userService.getUser(Number(id))
 
   if (error || !userInstance) {
     return notFound()

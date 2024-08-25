@@ -3,12 +3,12 @@ import getDataByFetch, { FetchResult } from '@/lib/fetch'
 import { IUser, User } from '../models/user'
 
 class UserService {
-  async getUserById(id: number): Promise<FetchResult<User>> {
-    const { data, error } = await getDataByFetch<IUser>(`/user?id=${id}`, {
+  async getUser(id: number): Promise<FetchResult<User>> {
+    const { data, error } = await getDataByFetch<IUser>(`/users?id=${id}`, {
       method: 'GET',
       tags: ['user', id.toString()]
     })
-    const user = data ? new User(data.id, data.password, data.email) : null
+    const user = data ? new User({ ...data }) : null
     return { data: user, error }
   }
 }

@@ -3,7 +3,7 @@
 export interface IOptions {
   cache?: RequestCache
   tags?: string[]
-  body?: string
+  body?: any
   method: 'POST' | 'GET' | 'PUT' | 'DELETE'
 }
 
@@ -22,6 +22,7 @@ export const getDataByFetch = async <T>(
   options: IOptions
 ): Promise<FetchResult<T>> => {
   const { cache = 'force-cache', tags, method, body } = options
+
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT + url}`, {
       cache,
@@ -32,7 +33,7 @@ export const getDataByFetch = async <T>(
       headers: {
         'Content-Type': 'application/json'
       },
-      ...(body && { body: JSON.stringify({ body }) })
+      ...(body && { body: JSON.stringify(body) })
     })
     if (res.status !== 200) {
       const error = {
