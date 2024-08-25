@@ -16,6 +16,10 @@ export default async function AssignMechanic() {
       {
         name: 'startDate',
         value: parsedDate
+      },
+      {
+        name: 'mechanic',
+        value: 'null'
       }
     ])
 
