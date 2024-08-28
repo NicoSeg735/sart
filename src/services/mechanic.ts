@@ -39,10 +39,13 @@ class MechanicService {
       `/mechanics/available?dateTime=${dateTime}`,
       {
         method: 'GET',
-        tags: [`availableMechanics`, dateTime]
+        tags: ['availableMechanics'],
+        cache: 'no-cache'
       }
     )
     const mechanics = data ? new MechanicCollection(data) : null
+    console.log('new mechanics', mechanics)
+
     return { data: mechanics, error }
   }
 }

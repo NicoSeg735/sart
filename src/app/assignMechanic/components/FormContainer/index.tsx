@@ -63,6 +63,10 @@ export default function FormContainer({
       title: 'Mecánico asignado',
       description: 'El mecánico se asignó al turno correctamente'
     })
+    reset()
+    setVehicle(undefined)
+    setAppointmentSelected(undefined)
+    setMechanics(undefined)
   }
 
   const formValues = watch()
@@ -125,18 +129,27 @@ export default function FormContainer({
               <FormControl>
                 <Select
                   onValueChange={field.onChange}
-                  defaultValue={field.value}
+                  value={field.value}
                   name={field.name}
                 >
                   <SelectTrigger id={field.name}>
                     <SelectValue placeholder="Selecciona un turno" />
                   </SelectTrigger>
                   <SelectContent>
-                    {pendingAppointments.map((option) => (
-                      <SelectItem key={option.id} value={option.id.toString()}>
-                        {new Date(option.date).toLocaleString()}
-                      </SelectItem>
-                    ))}
+                    {pendingAppointments.length > 0 ? (
+                      pendingAppointments.map((option) => (
+                        <SelectItem
+                          key={option.id}
+                          value={option.id.toString()}
+                        >
+                          {new Date(option.date).toLocaleString('es-AR')}
+                        </SelectItem>
+                      ))
+                    ) : (
+                      <div className="p-2 text-center text-sm text-gray-600">
+                        No hay turnos pendientes
+                      </div>
+                    )}
                   </SelectContent>
                 </Select>
               </FormControl>

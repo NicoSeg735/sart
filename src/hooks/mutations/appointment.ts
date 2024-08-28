@@ -1,5 +1,6 @@
 import { useMutation } from '@tanstack/react-query'
 
+import revalidate from '@/app/actions'
 import { IAppointment } from '@/models/appointment'
 import { appointmentService } from '@/services/appointment'
 
@@ -11,6 +12,11 @@ export const useUpdateAppointment = () => {
         throw response.error || new Error('Appointment not found')
       }
       return response.data
+    },
+    onSuccess: () => {
+      revalidate({
+        tags: ['appointments']
+      })
     }
   })
 }

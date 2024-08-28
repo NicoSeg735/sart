@@ -29,7 +29,7 @@ class AppointmentService {
       `/appointments${queryParams}`,
       {
         method: 'GET',
-        tags: [`appointments${queryParams}`]
+        tags: [`appointments`]
       }
     )
     const appointments = data ? new AppointmentCollection(data) : null
