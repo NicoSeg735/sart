@@ -25,6 +25,8 @@ class AppointmentService {
     params?: IQueryParams[]
   ): Promise<FetchResult<AppointmentCollection>> {
     const queryParams = params ? generateQueryParamsString(params) : ''
+
+    console.log(`Fetching appointments from: /appointments${queryParams}`);
     const { data, error } = await getDataByFetch<IAppointment[]>(
       `/appointments${queryParams}`,
       {

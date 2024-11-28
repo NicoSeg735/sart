@@ -10,6 +10,7 @@ import Header from '@/components/layout/Header'
 import { SonnerProvider, Toaster, TooltipProvider } from '@/components/ui'
 import { ReactQueryProvider } from '@/contexts/react-query/ReactQueryProvider'
 import { cn } from '@/lib/utils'
+import Hero from '@/components/layout/Hero'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -40,7 +41,10 @@ export default function RootLayout({
         <TooltipProvider>
           <ReactQueryProvider>
             <Header />
-            {children}
+            <main className="flex flex-grow flex-col items-center gap-8 p-16 space-y-8">
+              <Hero />
+              {children}
+            </main>
             <Footer />
           </ReactQueryProvider>
         </TooltipProvider>
