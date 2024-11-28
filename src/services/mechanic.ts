@@ -44,7 +44,6 @@ class MechanicService {
       }
     )
     const mechanics = data ? new MechanicCollection(data) : null
-    console.log('new mechanics', mechanics)
 
     return { data: mechanics, error }
   }

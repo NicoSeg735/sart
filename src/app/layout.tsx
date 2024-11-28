@@ -7,10 +7,10 @@ import { ReactNode } from 'react'
 
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
+import Hero from '@/components/layout/Hero'
 import { SonnerProvider, Toaster, TooltipProvider } from '@/components/ui'
 import { ReactQueryProvider } from '@/contexts/react-query/ReactQueryProvider'
 import { cn } from '@/lib/utils'
-import Hero from '@/components/layout/Hero'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -41,7 +41,7 @@ export default function RootLayout({
         <TooltipProvider>
           <ReactQueryProvider>
             <Header />
-            <main className="flex flex-grow flex-col items-center gap-8 p-16 space-y-8">
+            <main className="flex flex-grow flex-col items-center gap-8 space-y-8 p-16">
               <Hero />
               {children}
             </main>
