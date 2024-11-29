@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import {
   Card,
   CardContent,
@@ -8,26 +10,30 @@ import {
 
 interface QuestionCardProps {
   clientName: string
-  rason: string
+  title: string
+  id: number
 }
 
 export default function QuestionCard(props: QuestionCardProps) {
   return (
     <>
-      <Card className="mb-3 w-full">
+      <Card className="w-full p-2">
         <CardHeader>
-          <CardTitle>Consulta: {props.rason}</CardTitle>
+          <CardTitle>Consulta: {props.title}</CardTitle>
         </CardHeader>
         <CardContent>
           <p>Cliente: {props.clientName}</p>
         </CardContent>
-        <CardFooter className="flex space-x-4">
-          <button className="rounded-lg bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-600">
+        <CardFooter className="flex justify-between space-x-4">
+          <Link
+            href={`/clientQuestions/chat/${props.id}`}
+            className="rounded-lg bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-600"
+          >
             Ingresar
-          </button>
+          </Link>
 
-          <button className="rounded-lg bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-600">
-            Finalizar consulta
+          <button className="rounded-lg bg-red-500 px-4 py-2 font-bold text-white hover:bg-gray-600">
+            Finalizar
           </button>
         </CardFooter>
       </Card>

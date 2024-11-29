@@ -1,0 +1,289 @@
+[
+  {
+    "clientName": "Juan Pérez",
+    "reason": "Chequeo de frenos",
+    "id": 1,
+    "chat": [
+      {
+        "id": 1,
+        "time": "09:00",
+        "side": "left",
+        "sender": "client",
+        "message": "Buenos días, quisiera consultar sobre la revisión de frenos de mi vehículo."
+      },
+      {
+        "id": 2,
+        "time": "09:02",
+        "side": "right",
+        "sender": "workshop",
+        "message": "Buenos días, Juan. Claro, ¿podría darme más detalles sobre el problema que está experimentando?"
+      },
+      {
+        "id": 3,
+        "time": "09:04",
+        "side": "left",
+        "sender": "client",
+        "message": "Sí, he notado que al frenar el auto hace un ruido extraño, como un chirrido, y parece que no frena tan rápido como antes."
+      },
+      {
+        "id": 4,
+        "time": "09:06",
+        "side": "right",
+        "sender": "workshop",
+        "message": "Entendido. Eso podría indicar desgaste en las pastillas de freno o problemas en los discos. ¿Cuándo fue la última revisión de los frenos?"
+      },
+      {
+        "id": 5,
+        "time": "09:08",
+        "side": "left",
+        "sender": "client",
+        "message": "Creo que fue hace más de un año. No he tenido problemas hasta ahora."
+      },
+      {
+        "id": 6,
+        "time": "09:10",
+        "side": "right",
+        "sender": "workshop",
+        "message": "Entendido, le recomendaría que traiga el vehículo para hacer un chequeo completo. Tenemos disponibilidad mañana por la mañana, ¿le sirve ese horario?"
+      },
+      {
+        "id": 7,
+        "time": "09:12",
+        "side": "left",
+        "sender": "client",
+        "message": "Sí, perfecto. ¿A qué hora podría llevarlo?"
+      },
+      {
+        "id": 8,
+        "time": "09:14",
+        "side": "right",
+        "sender": "workshop",
+        "message": "A las 9:00 am estaría bien. Solo necesitamos una hora para el chequeo inicial. ¿Le parece bien?"
+      },
+      {
+        "id": 9,
+        "time": "09:15",
+        "side": "left",
+        "sender": "client",
+        "message": "Perfecto, entonces lo llevo mañana a las 9:00 am. Muchas gracias."
+      },
+      {
+        "id": 10,
+        "time": "09:16",
+        "side": "right",
+        "sender": "workshop",
+        "message": "Gracias a usted, Juan. Lo esperamos mañana. ¡Que tenga un buen día!"
+      }
+    ]
+  },
+  {
+    "clientName": "María López",
+    "reason": "Revisión de emisiones contaminantes",
+    "id": 2,
+    "chat": [
+      {
+        "id": 1,
+        "time": "10:00",
+        "side": "left",
+        "sender": "client",
+        "message": "Buenos días, me gustaría consultar sobre la revisión de emisiones contaminantes de mi vehículo."
+      },
+      {
+        "id": 2,
+        "time": "10:02",
+        "side": "right",
+        "sender": "workshop",
+        "message": "Buenos días, María. Claro, ¿qué tipo de vehículo tiene y cuándo fue la última vez que realizó esta revisión?"
+      },
+      {
+        "id": 3,
+        "time": "10:04",
+        "side": "left",
+        "sender": "client",
+        "message": "Es un sedán del 2018. Creo que nunca le he hecho una revisión de emisiones desde que lo compré."
+      },
+      {
+        "id": 4,
+        "time": "10:06",
+        "side": "right",
+        "sender": "workshop",
+        "message": "Entendido. Es importante realizar esta revisión periódicamente para cumplir con las normativas y garantizar el buen funcionamiento del motor."
+      },
+      {
+        "id": 5,
+        "time": "10:08",
+        "side": "right",
+        "sender": "workshop",
+        "message": "Tenemos disponibilidad para realizar la revisión mañana por la tarde, ¿le parece bien?"
+      },
+      {
+        "id": 6,
+        "time": "10:10",
+        "side": "left",
+        "sender": "client",
+        "message": "Sí, perfecto. ¿Qué documentos debo llevar?"
+      },
+      {
+        "id": 7,
+        "time": "10:12",
+        "side": "right",
+        "sender": "workshop",
+        "message": "Solo necesitamos la tarjeta de circulación del vehículo y, si tiene, el último informe de emisiones, aunque no es obligatorio."
+      },
+      {
+        "id": 8,
+        "time": "10:14",
+        "side": "left",
+        "sender": "client",
+        "message": "Perfecto, entonces los llevo mañana por la tarde. Muchas gracias."
+      },
+      {
+        "id": 9,
+        "time": "10:16",
+        "side": "right",
+        "sender": "workshop",
+        "message": "Gracias a usted, María. Nos vemos mañana. ¡Que tenga un excelente día!"
+      }
+    ]
+  },
+  {
+    "clientName": "Carlos Sánchez",
+    "reason": "Inspección de neumáticos",
+    "id": 3,
+    "chat": [
+      {
+        "id": 1,
+        "time": "11:00",
+        "side": "left",
+        "sender": "client",
+        "message": "Buenos días, quiero consultar sobre la inspección de los neumáticos de mi auto."
+      },
+      {
+        "id": 2,
+        "time": "11:02",
+        "side": "right",
+        "sender": "workshop",
+        "message": "Buenos días, Carlos. Por supuesto, ¿ha notado algún problema en particular con los neumáticos?"
+      },
+      {
+        "id": 3,
+        "time": "11:04",
+        "side": "left",
+        "sender": "client",
+        "message": "Sí, he notado que uno de ellos pierde aire con frecuencia y creo que los otros ya están algo desgastados."
+      },
+      {
+        "id": 4,
+        "time": "11:06",
+        "side": "right",
+        "sender": "workshop",
+        "message": "Entendido. Puede tratarse de una perforación o desgaste en la válvula del neumático que pierde aire. Además, podríamos revisar si los demás están dentro del límite de desgaste permitido."
+      },
+      {
+        "id": 5,
+        "time": "11:08",
+        "side": "right",
+        "sender": "workshop",
+        "message": "¿Cuándo le gustaría traer su vehículo para realizar la inspección? Tenemos disponibilidad esta tarde."
+      },
+      {
+        "id": 6,
+        "time": "11:10",
+        "side": "left",
+        "sender": "client",
+        "message": "Esta tarde me parece perfecto. ¿Cuánto tiempo tomará la inspección?"
+      },
+      {
+        "id": 7,
+        "time": "11:12",
+        "side": "right",
+        "sender": "workshop",
+        "message": "La inspección suele tomar entre 30 y 40 minutos, dependiendo del estado de los neumáticos. ¿A las 3:00 pm le parece bien?"
+      },
+      {
+        "id": 8,
+        "time": "11:14",
+        "side": "left",
+        "sender": "client",
+        "message": "Sí, está bien. A las 3:00 pm estaré ahí. Gracias."
+      },
+      {
+        "id": 9,
+        "time": "11:16",
+        "side": "right",
+        "sender": "workshop",
+        "message": "Perfecto, Carlos. Lo esperamos a las 3:00 pm. ¡Que tenga un buen día!"
+      }
+    ]
+  },
+  {
+    "clientName": "Ana Gómez",
+    "reason": "Revisión de luces y señalización",
+    "id": 4,
+    "chat": [
+      {
+        "id": 1,
+        "time": "14:00",
+        "side": "left",
+        "sender": "client",
+        "message": "Buenas tardes, quisiera consultar sobre la revisión de las luces y señalización de mi auto."
+      },
+      {
+        "id": 2,
+        "time": "14:02",
+        "side": "right",
+        "sender": "workshop",
+        "message": "Buenas tardes, Ana. Claro, ¿ha notado algún problema específico con las luces o los indicadores?"
+      },
+      {
+        "id": 3,
+        "time": "14:04",
+        "side": "left",
+        "sender": "client",
+        "message": "Sí, la luz trasera izquierda no enciende y las luces delanteras parecen menos brillantes que antes."
+      },
+      {
+        "id": 4,
+        "time": "14:06",
+        "side": "right",
+        "sender": "workshop",
+        "message": "Entendido. Podría ser un problema con las bombillas o el sistema eléctrico. También revisaremos el brillo de las luces delanteras para descartar desgaste en los faros."
+      },
+      {
+        "id": 5,
+        "time": "14:08",
+        "side": "right",
+        "sender": "workshop",
+        "message": "¿Le gustaría traer su auto mañana por la mañana para realizar la revisión?"
+      },
+      {
+        "id": 6,
+        "time": "14:10",
+        "side": "left",
+        "sender": "client",
+        "message": "Sí, mañana por la mañana está bien. ¿A qué hora podría llevarlo?"
+      },
+      {
+        "id": 7,
+        "time": "14:12",
+        "side": "right",
+        "sender": "workshop",
+        "message": "A las 10:00 am estaría perfecto. La revisión debería tomar unos 30 minutos. ¿Le parece bien ese horario?"
+      },
+      {
+        "id": 8,
+        "time": "14:14",
+        "side": "left",
+        "sender": "client",
+        "message": "Perfecto, estaré allí a las 10:00 am. Muchas gracias."
+      },
+      {
+        "id": 9,
+        "time": "14:16",
+        "side": "right",
+        "sender": "workshop",
+        "message": "Gracias a usted, Ana. Nos vemos mañana a las 10:00 am. ¡Que tenga una excelente tarde!"
+      }
+    ]
+  }
+]

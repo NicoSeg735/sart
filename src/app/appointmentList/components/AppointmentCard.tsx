@@ -16,22 +16,20 @@ interface AppointmentCardProps {
 
 export default function AppointmentCard(props: AppointmentCardProps) {
   return (
-    <>
-      <Card className="mb-3 w-full">
-        <CardHeader>
-          <CardTitle>Fecha: {props.date}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p>
-            {props.clientName} | {props.vehicle}
-          </p>
-        </CardContent>
-        <CardFooter>
-          <button className="rounded-lg bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-600">
-            <Link href="appointmentList/appointment"> Ver</Link>
-          </button>
-        </CardFooter>
-      </Card>
-    </>
+    <Card className="w-full p-2">
+      <CardHeader>
+        <CardTitle>Fecha: {props.date}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p>
+          {props.clientName} | {props.vehicle}
+        </p>
+      </CardContent>
+      <CardFooter>
+        <button className="rounded-lg bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-600">
+          <Link href="appointmentList/appointment">Ver</Link>
+        </button>
+      </CardFooter>
+    </Card>
   )
 }
