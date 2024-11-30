@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Carlos Gonzalez",
+    "email": "carlosgonzalez@gmail.com",
+    "password": "123456",
+    "role": "technical-director"
+  },
+  {
+    "id": 2,
+    "name": "Juan Perez",
+    "email": "juanperez@gmail.com",
+    "password": "123456",
+    "role": "service-advisor"
+  }
+]

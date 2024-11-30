@@ -13,7 +13,7 @@ export default function ButtonNavigation(props: ButtonNavigationProps) {
     <>
       <Link
         href={props.link}
-        className={cn(buttonVariants({ variant: 'default' }), 'w-1/3')}
+        className={cn(buttonVariants({ variant: 'default' }), 'w-fit')}
       >
         {props.name}
       </Link>

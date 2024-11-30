@@ -1,20 +1,26 @@
+'use client'
+
+import { useSession } from '@/stores/session'
+
 import ButtonNavigation from '../ui/buttonNavigation'
 
-interface ButtonProps {
-  name: string
-  link: string
-}
-
 interface NavigationSectionProps {
-  buttons: ButtonProps[]
+  buttons: {
+    name: string
+    link: string
+    roles: string[]
+  }[]
 }
 
 export default function NavigationSection(props: NavigationSectionProps) {
+  const { role } = useSession()
   return (
-    <div className="flex w-full items-center justify-center gap-10">
-      {props.buttons.map((button, index) => (
-        <ButtonNavigation key={index} name={button.name} link={button.link} />
-      ))}
+    <div className="flex w-full flex-wrap items-center justify-center gap-10">
+      {props.buttons
+        .filter((b) => b.roles.includes(role?.id as string))
+        .map((button, index) => (
+          <ButtonNavigation key={index} name={button.name} link={button.link} />
+        ))}
     </div>
   )
 }

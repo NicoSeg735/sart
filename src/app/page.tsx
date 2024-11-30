@@ -7,9 +7,27 @@ export default async function Home() {
       <Hero />
       <NavigationSection
         buttons={[
-          { name: 'Tarifas', link: '/' },
-          { name: 'Consultas', link: '/clientQuestions' },
-          { name: 'Turnos', link: '/appointmentList' }
+          {
+            name: 'Turnos',
+            link: '/appointmentList',
+            roles: ['technical-director', 'service-advisor']
+          },
+          { name: 'Tarifas', link: '#', roles: ['service-advisor'] },
+          {
+            name: 'Consultas',
+            link: '/clientQuestions',
+            roles: ['service-advisor']
+          },
+          {
+            name: 'Historial de asignaciones',
+            link: '#',
+            roles: ['technical-director']
+          },
+          {
+            name: 'Asignar mecánico a vehículo',
+            link: '/assignMechanic',
+            roles: ['technical-director']
+          }
         ]}
       />
     </div>
