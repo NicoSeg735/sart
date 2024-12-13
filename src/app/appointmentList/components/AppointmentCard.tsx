@@ -4,6 +4,8 @@ import { useState } from 'react'
 import Switch from 'react-switch'
 
 import {
+  Button,
+  buttonVariants,
   Card,
   CardContent,
   CardFooter,
@@ -34,9 +36,19 @@ export default function AppointmentCard(props: AppointmentCardProps) {
         </p>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <button className="rounded-lg bg-gray-500 px-4 py-2 font-bold text-white hover:bg-gray-600">
-          <Link href="appointmentList/appointment">Ver</Link>
-        </button>
+        <div className="flex gap-4">
+          <Link
+            className={buttonVariants({
+              variant: 'default'
+            })}
+            href="appointmentList/appointment"
+          >
+            Ver
+          </Link>
+          <Button variant={'destructive'} disabled={!checked}>
+            Confirmar
+          </Button>
+        </div>
 
         <div className="flex gap-2">
           <span>Documentacion Correcta:</span>
